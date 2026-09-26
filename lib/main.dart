@@ -37,39 +37,41 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
+            onPressed: () {},
             icon: const Icon(Icons.search),
-            onPressed: () {},
           ),
           IconButton(
+            onPressed: () {},
             icon: const Icon(Icons.notifications_none),
-            onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.chat_bubble_outline),
             onPressed: () {},
+            icon: const Icon(Icons.chat_bubble_outline),
           ),
         ],
       ),
+
       body: ListView(
         children: [
-          Container(
+          // Create Post
+          Padding(
             padding: const EdgeInsets.all(12),
             child: Row(
               children: [
                 const CircleAvatar(
-                  radius: 22,
+                  radius: 23,
                   child: Icon(Icons.person),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
+                      horizontal: 18,
+                      vertical: 13,
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(30),
                     ),
                     child: const Text(
                       'আপনার মনে কী আছে?',
@@ -80,17 +82,21 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+
           const Divider(),
+
           const PostCard(
             name: 'Bondhu User',
             text: 'Bondhu-তে সবাইকে স্বাগতম! 🎉',
           ),
+
           const PostCard(
             name: 'Bondhu Community',
             text: 'আজকের দিনটি সুন্দর হোক। ❤️',
           ),
         ],
       ),
+
       bottomNavigationBar: NavigationBar(
         selectedIndex: 0,
         destinations: const [
@@ -161,13 +167,18 @@ class PostCard extends StatelessWidget {
                 ),
               ],
             ),
+
             const SizedBox(height: 12),
+
             Text(
               text,
               style: const TextStyle(fontSize: 16),
             ),
+
             const SizedBox(height: 10),
+
             const Divider(),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
